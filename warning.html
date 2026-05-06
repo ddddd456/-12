@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нарушение правил | Бойцовский клуб</title>
+    <link rel="stylesheet" href="css/warning.css">
+</head>
+<body>
+    <div class="warning-container">
+        <div class="skull-animation">💀</div>
+        
+        <div class="warning-header">
+            <h1 class="glitch" data-text="НАРУШЕНИЕ ПРАВИЛ">НАРУШЕНИЕ ПРАВИЛ</h1>
+            <div class="rule-violation">
+                <span class="violation-badge">ПРАВИЛО 1</span>
+                <span class="violation-badge">ПРАВИЛО 2</span>
+            </div>
+        </div>
+        
+        <div class="violation-details">
+            <p class="violation-text">Посещая эту страницу, вы нарушили фундаментальные принципы Бойцовского клуба.</p>
+            
+            <div class="rules-reminder">
+                <div class="rule-item">
+                    <span class="rule-number">1</span>
+                    <span class="rule-text">Никому не рассказывать о Бойцовском клубе</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">2</span>
+                    <span class="rule-text">Никому не рассказывать о Бойцовском клубе</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="consequences">
+            <h2>Последствия нарушения</h2>
+            
+            <div class="consequence-list">
+                <div class="consequence-item">
+                    <div class="consequence-icon">⚠️</div>
+                    <div class="consequence-text">
+                        <strong>Тайлер Дёрден уведомлен</strong>
+                        <p>Лидер клуба получил уведомление о вашем нарушении.</p>
+                    </div>
+                </div>
+                
+                <div class="consequence-item">
+                    <div class="consequence-icon">💳</div>
+                    <div class="consequence-text">
+                        <strong>Проект "Разгром" перенаправлен</strong>
+                        <p>Ваша кредитная история стала приоритетной целью.</p>
+                    </div>
+                </div>
+                
+                <div class="consequence-item">
+                    <div class="consequence-icon">🚫</div>
+                    <div class="consequence-text">
+                        <strong>Доступ ограничен</strong>
+                        <p>Вы лишены доступа к информации клуба.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="countdown-section">
+                <h3>До самоуничтожения страницы:</h3>
+                <div class="countdown-display" id="countdown">30</div>
+                <p class="countdown-text">Осталось секунд: <span id="seconds">30</span></p>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="action-btn apology-btn" onclick="showApology()">Принести извинения</button>
+            <button class="action-btn escape-btn" onclick="attemptEscape()">Попытаться скрыться</button>
+            <button class="action-btn return-btn" onclick="returnToMain()">Вернуться и забыть</button>
+        </div>
+        
+        <div id="apologyResult" class="result-message">
+            <div class="result-content">
+                <h3>Извинения приняты, но не одобрены</h3>
+                <p>Продолжайте молчать. Никому не рассказывайте.</p>
+                <p class="redirect-text">Перенаправление через <span id="redirectCount">3</span> секунд...</p>
+            </div>
+        </div>
+        
+        <div id="escapeResult" class="result-message">
+            <div class="result-content">
+                <h3>Попытка неудачна</h3>
+                <p>Вы не можете скрыться от последствий своих действий.</p>
+                <p>Примите ответственность за нарушение правил.</p>
+            </div>
+        </div>
+        
+        <div class="quote-section">
+            <p class="quote">"Только потеряв всё, мы получаем свободу делать что угодно."</p>
+            <p class="quote-author">— Тайлер Дёрден</p>
+        </div>
+        
+        <div class="footer-warning">
+            <p class="disclaimer">Этот сайт не существует. Вы его не видели.</p>
+            <p class="reminder">Первый закон Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</p>
+        </div>
+    </div>
+    
+    <div class="destruction-overlay" id="destructionOverlay">
+        <div class="destruction-content">
+            <h1 class="destruction-text">САМОУНИЧТОЖЕНИЕ</h1>
+            <p class="destruction-subtext">Правила нарушены. Соединение разорвано.</p>
+            <div class="destruction-animation">💥🔥💀</div>
+        </div>
+    </div>
+    
+    <script src="js/warning.js"></script>
+</body>
+</html>

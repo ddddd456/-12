@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бойцовский клуб - только для избранных. Первое правило: никому не рассказывать о Бойцовском клубе.">
+    <title>Бойцовский клуб | Только для избранных</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Баннер предупреждения -->
+    <div class="warning-banner" id="warningBanner">
+        <span>ВНИМАНИЕ: Нарушение первого и второго правила карается исключением из клуба</span>
+        <button class="close-banner" onclick="closeBanner()">×</button>
+    </div>
+    
+    <!-- Мобильное меню -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Открыть меню">☰</button>
+    <div class="overlay" id="overlay"></div>
+    
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" onclick="closeMobileMenu()">×</button>
+        <a href="#rules" onclick="closeMobileMenu()">Правила</a>
+        <a href="#soap-game" onclick="closeMobileMenu()">Мыловарня</a>
+        <a href="#philosophy" onclick="closeMobileMenu()">Философия</a>
+        <a href="#application" onclick="closeMobileMenu()">Вступление</a>
+        <a href="#characters" onclick="closeMobileMenu()">Основатели</a>
+        <a href="#members" onclick="closeMobileMenu()">Члены клуба</a>
+        <a href="#secret" onclick="closeMobileMenu()">Проект "Разгром"</a>
+        <a href="warning.html" onclick="testRules()">Тест на лояльность</a>
+    </nav>
+    
+    <!-- Главный заголовок -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="title glitch" data-text="БОЙЦОВСКИЙ КЛУБ">БОЙЦОВСКИЙ КЛУБ</h1>
+            <p class="subtitle">Первый закон Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</p>
+            <p class="subtitle">Второй закон Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</p>
+            <button class="initiation-btn" onclick="scrollToApplication()">Пройти инициацию</button>
+            <button class="warning-btn" onclick="redirectToWarning()">Нарушить правила</button>
+        </div>
+        <div class="scrolling-text">
+            <marquee behavior="scroll" direction="left" scrollamount="3">
+                Ты — не твоя работа. Ты — не то, сколько у тебя денег на счету. Ты — не машина, на которой ты ездишь.
+            </marquee>
+        </div>
+    </header>
+    
+    <!-- Правила клуба -->
+    <section class="rules-section" id="rules">
+        <div class="container">
+            <h2 class="section-title">Правила клуба</h2>
+            <p class="section-subtitle">Запомните их. Соблюдайте их. Никогда не нарушайте их.</p>
+            
+            <div class="rules-container">
+                <div class="rule-card" onclick="toggleRule(this)" data-rule="1">
+                    <div class="rule-number">1</div>
+                    <div class="rule-text">Никому не рассказывать о Бойцовском клубе.</div>
+                    <div class="rule-penalty">Наказание: исключение</div>
+                </div>
+                
+                <div class="rule-card" onclick="toggleRule(this)" data-rule="2">
+                    <div class="rule-number">2</div>
+                    <div class="rule-text">Никому не рассказывать о Бойцовском клубе.</div>
+                    <div class="rule-penalty">Наказание: исключение</div>
+                </div>
+                
+                <div class="rule-card" onclick="toggleRule(this)" data-rule="3">
+                    <div class="rule-number">3</div>
+                    <div class="rule-text">Если кто-то кричит "стоп", падает без сознания или делает "хватит" - бой окончен.</div>
+                    <div class="rule-penalty">Наказание: дисквалификация</div>
+                </div>
+                
+                <div class="rule-card" onclick="toggleRule(this)" data-rule="8">
+                    <div class="rule-number">8</div>
+                    <div class="rule-text">Если это ваш первый вечер в клубе, вы должны драться.</div>
+                    <div class="rule-penalty">Обязательно</div>
+                </div>
+            </div>
+            
+            <div class="rules-counter">
+                <p>Всего правил: <span id="rulesCount">8</span></p>
+                <button class="btn-secondary" onclick="showAllRules()">Показать все правила</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Мыловарня -->
+    <section class="soap-game-section" id="soap-game">
+        <div class="container">
+            <h2 class="section-title">Мыловарня "Большая надежда"</h2>
+            <p class="section-subtitle">Создайте мыло по рецепту Тайлера Дёрдена. Используйте ингредиенты в правильном порядке.</p>
+            
+            <div class="soap-game-container">
+                <div class="game-instructions">
+                    <h3>Инструкция:</h3>
+                    <p>1. Выберите ингредиенты в правильном порядке</p>
+                    <p>2. Нажмите "Смешать"</p>
+                    <p>3. Получите мыло или неудачу</p>
+                </div>
+                
+                <div class="ingredients">
+                    <div class="ingredient" data-ingredient="fat" data-order="1">
+                        <span>Жир</span>
+                        <div class="ingredient-desc">Животный жир - основа</div>
+                    </div>
+                    <div class="ingredient" data-ingredient="lye" data-order="2">
+                        <span>Щёлок</span>
+                        <div class="ingredient-desc">Каустическая сода</div>
+                    </div>
+                    <div class="ingredient" data-ingredient="glycerin" data-order="3">
+                        <span>Глицерин</span>
+                        <div class="ingredient-desc">Для мягкости</div>
+                    </div>
+                    <div class="ingredient" data-ingredient="perfume" data-order="4">
+                        <span>Отдушка</span>
+                        <div class="ingredient-desc">Аромат разложения</div>
+                    </div>
+                </div>
+                
+                <div class="game-area">
+                    <div class="cauldron" id="cauldron">
+                        <div class="cauldron-content" id="cauldronContent"></div>
+                        <div class="cauldron-fire"></div>
+                    </div>
+                    <div class="selected-ingredients" id="selectedIngredients">
+                        <p>Выбранные ингредиенты: <span id="ingredientsList">Нет</span></p>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="mix-btn" id="mixBtn" onclick="mixIngredients()" disabled>Смешать ингредиенты</button>
+                    <button class="btn-secondary" onclick="resetGame()">Сбросить</button>
+                </div>
+                
+                <div class="soap-result">
+                    <div id="resultMessage"></div>
+                    <div class="crafted-soap" id="craftedSoap">
+                        <div class="soap-label">МЫЛО<br>"Большая надежда"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Философия -->
+    <section class="philosophy-section" id="philosophy">
+        <div class="container">
+            <h2 class="section-title">Философия Тайлера Дёрдена</h2>
+            <div class="quote-machine">
+                <div class="quote-display">
+                    <div class="quote" id="quote">"Ты — не твоя работа. Ты — не то, сколько у тебя денег на счету. Ты — не машина, на которой ты ездишь. Ты — не содержимое твоего бумажника. Ты — не твои штаны."</div>
+                    <div class="quote-author" id="quoteAuthor">— Тайлер Дёрден</div>
+                </div>
+                <div class="quote-controls">
+                    <button class="new-quote" onclick="newQuote()">Новая цитата</button>
+                    <button class="btn-secondary" onclick="addToFavorites()">⭐ Добавить в избранное</button>
+                </div>
+                <div class="favorites" id="favorites"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Анкета для вступления -->
+    <section class="application-section" id="application">
+        <div class="container">
+            <h2 class="section-title">Анкета для вступления в клуб</h2>
+            <p class="section-subtitle">Заполните эту форму, чтобы подать заявку на вступление. Помните правила.</p>
+            
+            <div class="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Имя (или псевдоним):</label>
+                        <input type="text" id="name" class="form-control" placeholder="Как к вам обращаться?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Возраст:</label>
+                        <input type="number" id="age" class="form-control" min="18" max="60" placeholder="18-60" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reason">Почему вы хотите вступить в Бойцовский клуб?</label>
+                    <textarea id="reason" class="form-control" rows="3" placeholder="Опишите ваши мотивы..." required></textarea>
+                    <div class="char-counter">Осталось символов: <span id="reasonCounter">500</span></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pain">Какую боль вы готовы вытерпеть?</label>
+                    <div class="pain-options">
+                        <label class="pain-option">
+                            <input type="radio" name="pain" value="physical" required>
+                            <span>Физическую боль</span>
+                        </label>
+                        <label class="pain-option">
+                            <input type="radio" name="pain" value="emotional">
+                            <span>Душевные страдания</span>
+                        </label>
+                        <label class="pain-option">
+                            <input type="radio" name="pain" value="both">
+                            <span>И то, и другое</span>
+                        </label>
+                        <label class="pain-option">
+                            <input type="radio" name="pain" value="whatever">
+                            <span>Всё, что потребуется</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consumer">Что вы думаете о потребительской культуре?</label>
+                    <textarea id="consumer" class="form-control" rows="2" placeholder="Ваше мнение о вещах, которые владеют вами..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rule1">Повторите первое правило Бойцовского клуба:</label>
+                    <input type="text" id="rule1" class="form-control" placeholder="Правило номер один..." required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreeRules" required>
+                        <label for="agreeRules">Я принимаю все правила Бойцовского клуба и обязуюсь их соблюдать</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreeSecrecy" required>
+                        <label for="agreeSecrecy">Я обязуюсь хранить в тайне существование Бойцовского клуба</label>
+                    </div>
+                </div>
+                
+                <button class="submit-btn" onclick="submitApplication()">Отправить заявку</button>
+                <div id="applicationResult"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Основатели -->
+    <section class="character-section" id="characters">
+        <div class="container">
+            <h2 class="section-title">Основатели</h2>
+            <div class="character-grid">
+                <div class="character-card">
+                    <div class="character-img" style="background: linear-gradient(45deg, #333, #555);">
+                        <div class="character-label">Рассказчик</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>Рассказчик</h3>
+                        <p>Страдающий бессонницей сотрудник страховой компании, ищущий смысл в жизни через разрушение.</p>
+                        <div class="character-stats">
+                            <span>Статус: Активист</span>
+                            <span>Проект: Разгром</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-img" style="background: linear-gradient(45deg, #8b0000, #550000);">
+                        <div class="character-label">Тайлер Дёрден</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>Тайлер Дёрден</h3>
+                        <p>Харизматичный анархист, мыловар и основатель Бойцовского клуба. Лидер Проекта "Разгром".</p>
+                        <div class="character-stats">
+                            <span>Статус: Лидер</span>
+                            <span>Навык: Мыловарение</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Члены клуба -->
+    <section class="members-section" id="members">
+        <div class="container">
+            <h2 class="section-title">Только для членов клуба</h2>
+            <p class="section-subtitle">Информация доступна только проверенным членам Бойцовского клуба.</p>
+            
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-icon">📍</div>
+                    <h3>Места встреч</h3>
+                    <p>Актуальная информация о местах и времени проведения встреч</p>
+                    <button class="btn-small" onclick="requestAccess('meetings')">Запросить доступ</button>
+                </div>
+                <div class="member-card">
+                    <div class="member-icon">💣</div>
+                    <h3>Проект "Разгром"</h3>
+                    <p>Детали следующих операций</p>
+                    <button class="btn-small" onclick="showPasswordPrompt()">Ввести пароль</button>
+                </div>
+                <div class="member-card">
+                    <div class="member-icon">📜</div>
+                    <h3>Новые правила</h3>
+                    <p>Обновления и изменения в правилах клуба</p>
+                    <button class="btn-small" onclick="requestAccess('rules')">Запросить доступ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Проект "Разгром" -->
+    <section class="secret-section" id="secret">
+        <div class="container">
+            <h2 class="section-title">Проект "Разгром"</h2>
+            <div class="password-prompt" id="passwordPrompt">
+                <p>Введите пароль для доступа к информации о Проекте "Разгром":</p>
+                <input type="password" class="password-input" id="password" placeholder="Пароль" autocomplete="off">
+                <div class="password-hint">Подсказка: Название операции</div>
+                <button class="submit-btn" onclick="checkPassword()">Проверить</button>
+                <button class="btn-secondary" onclick="hidePasswordPrompt()">Отмена</button>
+            </div>
+            <div class="secret-content" id="secretContent">
+                <h3>Проект "Разгром"</h3>
+                <div class="mission-info">
+                    <div class="mission-card">
+                        <h4>Основная миссия</h4>
+                        <p>Уничтожить историю долгов. Стереть кредитные записи. Вернуть общество к нулю.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h4>Следующая цель</h4>
+                        <p>Здание Национальной кредитной библиотеки. Взрыв запланирован на 2:14 утра.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h4>Статус</h4>
+                        <p>Подготовка завершена. Ожидание сигнала.</p>
+                    </div>
+                </div>
+                <div class="mission-countdown">
+                    <h4>До следующей операции:</h4>
+                    <div class="countdown-timer" id="countdownTimer">
+                        <span>00</span>:<span>00</span>:<span>00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Бойцовский клуб</h3>
+                    <p>Основан в 1999 году</p>
+                    <p>Лидер: Тайлер Дёрден</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Правила</h3>
+                    <ul>
+                        <li>Никому не рассказывать</li>
+                        <li>Никому не рассказывать</li>
+                        <li>Бой до остановки</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Мыловарня "Большая надежда"</p>
+                    <p>Папер-стрит, 5123</p>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>Этот сайт создан в ознакомительных целях и не связан с создателями фильма "Бойцовский клуб".</p>
+                <p>Помните первое правило Бойцовского клуба. И второе.</p>
+            </div>
+            <div class="footer-actions">
+                <button class="btn-secondary" onclick="resetSite()">Сбросить прогресс</button>
+                <button class="warning-btn" onclick="redirectToWarning()">Тест на лояльность</button>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Модальное окно -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
